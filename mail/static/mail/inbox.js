@@ -61,18 +61,30 @@ function get_emails(mailbox) {
 }
 
 function load_emails(emails, mailbox) {
+  const emails_view = document.querySelector('#emails-view');
+  const list_element = document.createElement('div');
+  list_element.className = 'list-group';
+  emails_view.append(list_element);
 
   emails.forEach((email) => {
     if ((mailbox === 'archive' && email.archived) || (mailbox !== 'archive' && !email.archived)) {
       const element = document.createElement('div');
       element.id = 'email-' + email.id;
-      element.innerHTML = `${email.sender}  ${email.subject} ${email.timestamp}`;
+      element.classList.add('list-group-item', 'list-group-item-action', 'flex-column', 'align-items-start')
+      
+      element.innerHTML =
+      `<div class="d-flex w-100 justify-content-between">
+      <h5 class='mb-1'>${email.sender}</h5> 
+      <small>${email.timestamp}</small>
+      </div>
+      <p class='mb-1'> ${email.subject}</p>`;
+
       element.style.border = 'thin solid';
-      element.style.backgroundColor = (email.read ? 'white' : 'gray')
+      element.style.backgroundColor = (email.read ? 'gray' : 'white')
        
       element.addEventListener('click', () => get_email(email.id, mailbox));
     
-      document.querySelector('#emails-view').append(element);
+      list_element.append(element);
     }
   })
   
@@ -133,7 +145,7 @@ function load_email_content(email, mailbox) {
         <div id="timestamp"><strong>Timestamp </strong><span>${email.timestamp}</span></div>
         <button class="btn btn-sm btn-outline-primary" id="replay">Reply</button>
         <button class="btn btn-sm btn-outline-primary" id="archive" hidden>Archive</button>
-        <article id="email-content" class="border-top mt-3"></article>`
+        <article id="email-content" class="border-top mt-3">${email.body}</article>`
  
   const replay_button  = document.querySelector('#replay');
   const archive_button = document.querySelector('#archive');
