@@ -1,6 +1,6 @@
 # Mail - CS50W Project
 
-This repository contains my project submission for the "Mail" project, part of Harvard University's CS50’s Web Programming with Python and JavaScript course. The project aims to design a front-end for an email client that can send and receive emails using API calls.
+This repository contains my project submission for the "Mail" project, part of Harvard University's CS50’s Web Programming with Python and JavaScript course. My contribution focused exclusively on developing the front-end aspects of the email client, utilizing HTML and JavaScript to enable users to send, receive, and manage emails through API calls. 
 - [Project Specifications](https://cs50.harvard.edu/web/2020/projects/3/mail/)
 ## Getting Started
 
