@@ -1,4 +1,4 @@
-# Mail - CS50W Project
+# EZMail - CS50W Project
 
 This repository contains my project submission for the "Mail" project, part of Harvard University's CS50’s Web Programming with Python and JavaScript course. My contribution focused exclusively on developing the front-end aspects of the email client, utilizing HTML and JavaScript to enable users to send, receive, and manage emails through API calls. 
 - [Project Specifications](https://cs50.harvard.edu/web/2020/projects/3/mail/)
@@ -6,8 +6,8 @@ This repository contains my project submission for the "Mail" project, part of H
 
 To run this project locally, follow these steps:
 
-1. Clone the repo using `git clone https://github.com/Shefaabi/mail`.
-2. Navigate into the `mail` directory using `cd mail`.
+1. Clone the repo using `git clone https://github.com/Shefaabi/EZMail`.
+2. Navigate into the `mail` directory using `cd EZMail`.
 3. Run `python manage.py makemigrations mail` to make migrations for the `mail` app.
 4. Execute `python manage.py migrate` to apply migrations to the database.
 5. Start the development server with `python manage.py runserver` and visit `http://127.0.0.1:8000/` in your web browser.
